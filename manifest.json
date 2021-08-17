@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "GitProxy",
+    "version": "1.2",
+    "icons": {
+            "16": "icon16.png",
+            "32": "icon32.png",
+            "64": "icon64.png",
+            "128": "icon128.png"
+    },
+
+    "description": "GitProxy allow's to download git repositories freely using nexus.uclv.cu as a proxy \nDon't share to much \n Don't abuse \n Just feed the Cat \n Based on Ernesto Alejandro Santana (https://humanos.uci.cu/author/nesty/) UCI-Github extencion",
+
+    "permissions": [
+        "activeTab",
+        "webRequest",
+        "webRequestBlocking",
+        "tabs"
+    ],
+    "browser_action": {
+        "default_icon": "icon16.png",
+        "default_title": "GitProxy"
+    },
+    "content_scripts": [{
+        "matches": ["*://github.com/*"],
+        "all_frames": true,
+        "js": ["jquery.min.js", "redirect.js"]
+    }],
+    "web_accessible_resources": ["*.*"]
+}
